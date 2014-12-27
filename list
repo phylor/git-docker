@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls /home/git/ -I git-shell-commands
