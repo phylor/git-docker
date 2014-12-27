@@ -12,8 +12,10 @@ fi
 
 # Set the project name, adding .git if necessary
 project=$(echo "$*" | sed 's/\.git$\|$/.git/i')
+repository="/home/git/repositories/$project"
 
 # Create and initialise the project
-mkdir "$project" && \
-cd "$project" && \
-git --bare init
+mkdir "$repository" && \
+cd "$repository" && \
+git --bare init && \
+ln -s "$repository" "/home/git/$project"
