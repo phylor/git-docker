@@ -9,7 +9,7 @@ chmod 644 /home/git/.ssh/authorized_keys
 
 # Recreate symlinks to repositories (when restarting container)
 for repository in $(ls /home/git/repositories); do
-  ln -s "/home/git/repository/$repository" "/home/git/$repository"
+  ln -s "/home/git/repositories/$repository" "/home/git/$repository"
 done
 
 # Start SSH server
