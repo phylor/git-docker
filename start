@@ -5,4 +5,4 @@ chown git:git /home/git/.ssh/authorized_keys
 chmod 644 /home/git/.ssh/authorized_keys
 ls -l /home/git/.ssh
 
-/usr/sbin/sshd -D -d
+/usr/sbin/sshd -D
