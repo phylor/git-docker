@@ -7,7 +7,7 @@ Provides git via SSH in a docker container. Authentication is possible via publi
     docker run -p 22:22 -v mypublickey.pub:/keys git
 
 The file located at `/keys` within the container is the
-`authorized_keys` file which is used for SSH container. You can either
+`authorized_keys` file which is used for SSH authentication. You can either
 mount a single public key to it, or a standard `authorized_keys` file.
 
 ## Connect via SSH
