@@ -19,4 +19,7 @@ RUN chmod 755 /home/git/git-shell-commands/create
 COPY list /home/git/git-shell-commands/list
 RUN chmod 755 /home/git/git-shell-commands/list
 
-CMD ["/usr/sbin/sshd", "-D"]
+COPY start /start
+RUN chmod +x /start
+
+CMD ["/start"]
