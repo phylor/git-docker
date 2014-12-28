@@ -1,7 +1,16 @@
 #!/bin/bash
 
+# Copy SSH keys
 cp /keys /home/git/.ssh/authorized_keys
+
+# Fix permissions of files (from possibly mounted volumes)
 chown -R git:git /home/git
 chmod 644 /home/git/.ssh/authorized_keys
 
+# Recreate symlinks to repositories (when restarting container)
+for repository in $(ls /home/git/repositories); do
+  ln -s "/home/git/repository/$repository" "/home/git/$repository"
+done
+
+# Start SSH server
 /usr/sbin/sshd -D
